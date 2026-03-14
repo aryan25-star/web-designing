@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seminar Registration Form</title>
+</head>
+<body>
+    <h2>Seminar Registration</h2>
+    <form action="#" method="post">
+        <p>
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required>
+        </p>
+
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required>
+        </p>
+
+        <p>
+            <label for="course">Course/Department:</label><br>
+            <input type="text" id="course" name="course" required>
+        </p>
+
+        <p>
+            <label for="attendance">Attendance Type:</label><br>
+            <select id="attendance" name="attendance" required>
+                <option value="">Select</option>
+                <option value="in-person">In-person</option>
+                <option value="online">Online</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="3"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Register">
+        </p>
+    </form>
+</body>
+</html>
