@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .box {
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .box img {
+            width: 200px;
+            height: 200px;
+            transition: 0.5s;
+        }
+
+        .box img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Image Gallery</h1>
+
+    <div class="gallery">
+        <div class="box">
+            <img src="csk1.jpg" alt="img1">
+        </div>
+
+        <div class="box">
+            <img src="img2.jpg" alt="img2">
+        </div>
+        <div class="box">
+            <img src="img5.jpg" alt="img5">
+        </div>
+
+        <div class="box">
+            <img src="img6.jpg" alt="img6">
+        </div>
+
+        <div class="box">
+            <img src="img3.jpg" alt="img3">
+        </div>
+    </div>
+
+</body>
+</html>
