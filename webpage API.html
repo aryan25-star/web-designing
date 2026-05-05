@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 API Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #dragBox, #dropZone {
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            margin: 10px;
+            border: 2px dashed #333;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+        }
+        #dragBox {
+            background-color: #d1e7dd;
+            cursor: grab;
+        }
+        #dropZone {
+            background-color: #f8d7da;
+        }
+        button {
+            margin: 10px 0;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>HTML5 API Demo</h2>
+
+<!-- Drag and Drop -->
+<h3>1. Drag and Drop</h3>
+<div id="dragBox" draggable="true" ondragstart="drag(event)">
+    Drag Me
+</div>
+
+<div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Drop Here
+</div>
+
+<!-- Geolocation -->
+<h3>2. Geolocation</h3>
+<button onclick="getLocation()">Get Location</button>
+<p id="locationOutput"></p>
+
+<!-- Web Storage -->
+<h3>3. Web Storage (localStorage)</h3>
+<input type="text" id="nameInput" placeholder="Enter your name">
+<button onclick="saveData()">Save</button>
+<button onclick="loadData()">Load</button>
+<p id="storageOutput"></p>
+
+<script>
+    // Drag and Drop
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+    // Geolocation
+    function getLocation() {
+        const output = document.getElementById("locationOutput");
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    output.innerHTML = 
+                        "Latitude: " + position.coords.latitude +
+                        "<br>Longitude: " + position.coords.longitude;
+                },
+                function(error) {
+                    output.innerHTML = "Error getting location.";
+                }
+            );
+        } else {
+            output.innerHTML = "Geolocation is not supported.";
+        }
+    }
+
+    // Web Storage
+    function saveData() {
+        let name = document.getElementById("nameInput").value;
+        localStorage.setItem("username", name);
+        alert("Data saved!");
+    }
+
+    function loadData() {
+        let name = localStorage.getItem("username");
+        document.getElementById("storageOutput").innerText = 
+            name ? "Stored Name: " + name : "No data found.";
+    }
+</script>
+
+</body>
+</html>
