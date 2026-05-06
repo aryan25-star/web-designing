@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Lookbook</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f1e8;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+nav {
+    background: #2a1810;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: gold;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 60px;
+    background: #3d2415;
+    color: gold;
+}
+
+/* Section */
+section {
+    padding: 40px 20px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+.card img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Video Container (Fixed) */
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Form */
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+input, button {
+    padding: 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #3d2415;
+    color: gold;
+    cursor: pointer;
+    border: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #2a1810;
+    color: gold;
+    padding: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#spring">Spring</a>
+    <a href="#winter">Winter</a>
+</nav>
+
+<header>
+    <h1>Fashion Lookbook</h1>
+    <p>Modern Seasonal Designs</p>
+</header>
+
+<main>
+
+<section id="spring">
+    <h2>Spring Collection</h2>
+
+    <details>
+        <summary>View Collection Info</summary>
+        <p>Light fabrics, pastel colors, and floral prints.</p>
+    </details>
+
+    <div class="grid">
+        <article class="card">
+            <figure>
+                <img src="https://i.pinimg.com/736x/74/db/38/74db381d0642cb7efaf11bc8de99a8d8.jpg">
+                <figcaption>Spring Style 1</figcaption>
+            </figure>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikX8ZulAvZCxdVlQ6gRtro0oUzfHPdcUoOQ&s">
+                <figcaption>Spring Style 2</figcaption>
+            </figure>
+        </article>
+    </div>
+</section>
+
+<section id="winter">
+    <h2>Winter Collection</h2>
+
+    <details>
+        <summary>View Collection Info</summary>
+        <p>Warm coats, dark tones, and layered fashion.</p>
+    </details>
+
+    <div class="grid">
+        <article class="card">
+            <figure>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-R8o97b4d_6y8ACZmithv0mvK3s1-GVP_CA&s">
+                <figcaption>Winter Style 1</figcaption>
+            </figure>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://azuro-republic.com/cdn/shop/articles/30_Best_Winter_Coats_Jackets_for_Men_in_2022_To_Stay_Stylish_Warm.jpg?v=1673222298&width=2048">
+                <figcaption>Winter Style 2</figcaption>
+            </figure>
+        </article>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align:center;">Fashion Show Preview</h2>
+    <div class="video-container">
+       <iframe width="915" height="514" src="https://www.youtube.com/embed/c81uh2Bw5LU" title="The new Lacoste Campaign I Go for a Lacoste Polo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align:center;">Subscribe</h2>
+    <form>
+        <input type="email" placeholder="Enter Email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>Designer: Aryan Patil</p>
+</footer>
+
+</body>
+</html>
